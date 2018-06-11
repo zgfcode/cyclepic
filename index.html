@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>cyclicpic</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		#picborder{
+			position: relative;
+			width: 1200px;
+			height: 360px;
+			border: 1px solid blue;
+			box-shadow: 1px 1px 10px cyan;
+			margin: 20px auto;
+			overflow: hidden;
+		}
+		#cyclicarea{
+			width: 6000px;
+			position: absolute;
+			left: 0;
+			top: 0;
+			overflow: hidden;
+		}
+		#cyclicarea div{
+			width: 1200px;
+			float: left;
+		}
+		#cyclicarea div img{
+			width: 1200px;
+			height: 360px;
+		}
+		#nowpic{
+			position: absolute;
+			bottom: 0;
+			width: 100%;
+			height: 30px;
+			text-align: center;
+		}
+		#nowpic li{
+			display: inline-block;
+			width: 25px;
+			height: 25px;
+			border-radius: 50%;
+			background-color: cyan;
+			margin-right: 5px;
+			cursor: pointer;
+		}
+		#nowpic li.selected{
+			background-color: #ff9b2f;
+		}
+		#toLeft, #toRight{
+			display: none;
+			position: absolute;
+			top: 50%;
+			margin-top: -25px;
+			width: 30px;
+			height: 50px;
+			background: rgba(0, 0, 0, .3);
+			color: #fff;
+			font-size: 30px;
+			text-align: center;
+			line-height: 50px;
+		}
+		#toLeft{
+			left: 3px;
+		}
+		#toRight{
+			right: 3px;
+		}
+		#toLeft:hover, #toRight:hover{
+			background: rgba(0, 0, 0, 1);
+		}
+		ul{
+			list-style: none;
+		}
+		a{
+			text-decoration: none;
+			color: #000;
+		}
+
+	</style>
+</head>
+<body>
+	<div id="picborder">
+		<div id="cyclicarea">
+			<div><img src="./images/01.png" alt=""></div>
+			<div><img src="./images/02.png" alt=""></div>
+			<div><img src="./images/03.png" alt=""></div>
+			<div><img src="./images/04.png" alt=""></div>
+			<div><img src="./images/01.png" alt=""></div>
+		</div>
+		<ul id="nowpic">
+			<li class="selected"></li>
+			<li></li>
+			<li></li>
+			<li></li>
+		</ul>
+		<a id="toLeft" href="javascript:;"> < </a>
+		<a id="toRight" href="javascript:;"> > </a>
+		<!-- href="javascript:;	去掉a标签的默认动作，相当于href="javascript:void(0)" -->
+	</div>
+
+
+	<script type="text/javascript" src="js/utils.js"></script>
+	<script type="text/javascript" src="js/moveAnimate.js"></script>
+	<script type="text/javascript" src="js/index.js"></script>
+
+</body>
+</html>
